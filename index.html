@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>महादिव्य पंचांग</title>
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;महादिव्य पंचांग&quot;,&quot;short_name&quot;:&quot;पंचांग&quot;,&quot;start_url&quot;:&quot;.&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#1a1a2e&quot;,&quot;theme_color&quot;:&quot;#1a1a2e&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ff9800'/%3E%3Ctext x='50' y='60' font-size='40' fill='white' text-anchor='middle' font-family='Arial, sans-serif'%3E🕉️%3C/text%3E%3C/svg%3E&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/svg+xml&quot;}]}">
+</head>
+<body data-theme="dark">
+
+    <!-- =========== लोडिंग स्क्रीन =========== -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader"></div>
+        <div class="loading-text">महादिव्य पंचांग लोड हो रहा है...</div>
+    </div>
+
+    <!-- =========== लॉगिन/साइन-अप स्क्रीन =========== -->
+    <div id="auth-screen" class="auth-container" style="display: none;">
+        <div class="auth-card">
+            <h1 class="app-title">महादिव्य पंचांग</h1>
+            <p id="auth-message">जारी रखने के लिए लॉगिन या साइन-अप करें</p>
+            <div id="auth-form-container">
+                <input type="email" id="email" placeholder="ईमेल" class="auth-input">
+                <input type="password" id="password" placeholder="पासवर्ड" class="auth-input">
+                <button id="email-login-btn" class="auth-btn">लॉगिन करें</button>
+                <button id="email-signup-btn" class="auth-btn secondary">नया अकाउंट बनाएँ</button>
+            </div>
+            <div class="divider">या</div>
+            <button id="google-signin-btn" class="auth-btn google-btn">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google icon">
+                गूगल से जारी रखें
+            </button>
+            <p id="auth-error" class="auth-error"></p>
+        </div>
+    </div>
+
+    <!-- =========== मुख्य ऐप स्क्रीन =========== -->
+    <div id="app-screen" class="container" style="display: none;">
+        <header class="app-header">
+            <div class="header-left">
+                <div id="user-greeting">नमस्ते!</div>
+            </div>
+            <div class="header-right">
+                <button id="settings-btn" class="icon-btn">⚙️</button>
+                <button id="logout-btn" class="icon-btn">🚪</button>
+            </div>
+        </header>
+        
+        <!-- विज्ञापन बैनर -->
+        <div id="ad-banner-top" class="ad-banner"></div>
+
+        <div class="main-card">
+            <!-- पंचांग कंटेंट यहाँ आएगा -->
+        </div>
+        
+        <!-- प्रीमियम फीचर्स सेक्शन -->
+        <div id="premium-features-section">
+            <h2>✨ प्रीमियम फीचर्स</h2>
+            <div id="greeting-card-maker" class="premium-feature-card">
+                <h3>महादिव्य क्रिएशन्स</h3>
+                <p>त्योहारों के लिए सुंदर ग्रीटिंग कार्ड बनाएँ!</p>
+            </div>
+            <!-- और प्रीमियम फीचर्स यहाँ जुड़ेंगे -->
+            <button id="subscribe-btn" class="subscribe-btn">अभी सब्सक्राइब करें!</button>
+        </div>
+
+        <footer class="app-footer">
+            <div class="social-links">
+                <a id="instagram-link" href="#" target="_blank">Instagram</a>
+                <a id="facebook-link" href="#" target="_blank">Facebook</a>
+            </div>
+            <div class="neon-text">PRINS SONI</div>
+        </footer>
+    </div>
+
+    <!-- =========== सुपर एडमिन पैनल =========== -->
+    <div id="admin-panel" style="display: none;">
+        <!-- एडमिन डैशबोर्ड यहाँ आएगा -->
+        <h1>सुपर एडमिन पैनल</h1>
+        <!-- सेटिंग्स, विज्ञापन, आदि के फॉर्म यहाँ होंगे -->
+        <button id="admin-logout-btn">एडमिन लॉगआउट</button>
+    </div>
+
+    <!-- Razorpay और Firebase SDKs -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    
+    <!-- मुख्य जावास्क्रिप्ट फाइल -->
+    <script src="script.js"></script>
+</body>
+</html>
