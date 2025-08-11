@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>महादिव्य पंचांग - प्रिंस सोनी द्वारा</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- CSS फाइल को लोड करने का सबसे मज़बूत तरीका -->
+    <link rel="stylesheet" href="./style.css?v=1.1"> 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
@@ -44,12 +47,12 @@
     <div id="premium-modal" class="modal"><div class="modal-content"><span class="close-btn">&times;</span><h2>यह एक प्रीमियम फीचर है!</h2><p>असीमित नोट्स, अलार्म और विज्ञापन-मुक्त अनुभव का लाभ उठाने के लिए, कृपया हमारा प्रीमियम प्लान खरीदें।</p><button id="upgrade-btn">अभी अपग्रेड करें - ₹<span id="price-display">99</span></button></div></div>
 
     <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js" defer></script>
 
-    <script>
+    <script defer>
         // आपका असली, रेडी-टू-यूज़ Firebase कॉन्फ़िगरेशन
         const firebaseConfig = {
             apiKey: "AIzaSyA_C5-1k40B2an8h3nTFkRflO4d4ZS6JWQ",
@@ -62,6 +65,6 @@
         firebase.initializeApp(firebaseConfig);
     </script>
     
-    <script src="script.js"></script>
+    <script src="./script.js?v=1.1" defer></script>
 </body>
-</html>
+</html>                                                                                                                                                                                                                                                                                                   </html>
