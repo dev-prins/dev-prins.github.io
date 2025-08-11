@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>महादिव्य पंचांग - प्रिंस सोनी द्वारा</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>महादिव्य पंचांग</h1>
+        <div class="auth-section">
+            <span id="user-greeting">नमस्ते, मेहमान</span>
+            <button id="login-logout-btn">लॉगिन</button>
+        </div>
+    </header>
+
+    <main id="app">
+        <div id="monthly-media">
+            <img id="monthly-photo" src="https://via.placeholder.com/900x250.png?text=महादिव्य+पंचांग" alt="मासिक फोटो">
+            <audio id="monthly-sound" loop></audio>
+            <button id="mute-btn"><i class="fas fa-volume-high"></i></button>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button id="prev-month-btn"><i class="fas fa-chevron-left"></i></button>
+                <h2 id="current-month-year"></h2>
+                <button id="next-month-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="weekdays">
+                <div>रवि</div><div>सोम</div><div>मंगल</div><div>बुध</div><div>गुरु</div><div>शुक्र</div><div>शनि</div>
+            </div>
+            <div class="days-grid" id="days-grid"></div>
+        </div>
+        <p class="credits">निर्माता: प्रिंस सोनी</p>
+    </main>
+
+    <!-- पॉप-अप्स -->
+    <div id="auth-modal" class="modal"><div class="modal-content"><span class="close-btn">&times;</span><h2>लॉगिन / साइन-अप</h2><input type="email" id="email-input" placeholder="ईमेल डालें"><input type="password" id="password-input" placeholder="पासवर्ड डालें"><button id="signup-btn">साइन-अप करें</button><button id="login-btn">लॉगिन करें</button></div></div>
+    <div id="date-modal" class="modal"><div class="modal-content"><span class="close-btn">&times;</span><h3 id="modal-date"></h3><p id="holiday-reason" class="holiday-text"></p><textarea id="note-input" placeholder="आज के लिए कुछ ख़ास लिखें..."></textarea><button id="save-note-btn">नोट सेव करें</button><hr><div class="alarm-section"><h4>अलार्म (प्रीमियम फीचर)</h4><input type="time" id="alarm-time"><input type="text" id="alarm-label" placeholder="अलार्म का कारण..."><button id="set-alarm-btn">अलार्म सेट करें</button></div></div></div>
+    <div id="premium-modal" class="modal"><div class="modal-content"><span class="close-btn">&times;</span><h2>यह एक प्रीमियम फीचर है!</h2><p>असीमित नोट्स, अलार्म और विज्ञापन-मुक्त अनुभव का लाभ उठाने के लिए, कृपया हमारा प्रीमियम प्लान खरीदें।</p><button id="upgrade-btn">अभी अपग्रेड करें - ₹<span id="price-display">99</span></button></div></div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+
+    <script>
+        // आपका असली, रेडी-टू-यूज़ Firebase कॉन्फ़िगरेशन
+        const firebaseConfig = {
+            apiKey: "AIzaSyA_C5-1k40B2an8h3nTFkRflO4d4ZS6JWQ",
+            authDomain: "mahadivya-panchang.firebaseapp.com",
+            projectId: "mahadivya-panchang",
+            storageBucket: "mahadivya-panchang.appspot.com",
+            messagingSenderId: "336726728626",
+            appId: "1:336726728626:web:9d165e3b429fe1b529ceab"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
