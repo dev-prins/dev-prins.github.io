@@ -1,0 +1,8 @@
+body { font-family: sans-serif; padding: 2rem; background-color: #f4f4f4; }
+header, .user-card { display: flex; justify-content: space-between; align-items: center; }
+section { background: white; padding: 1.5rem; margin-top: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+input, button { padding: 0.7rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 4px; }
+button { background-color: #007BFF; color: white; cursor: pointer; border: none; }
+#admin-logout-btn, .user-card button.remove-premium { background-color: #dc3545; }
+.user-card button.make-premium { background-color: #28a745; }
+#user-list .user-card { padding: 1rem; border-bottom: 1px solid #eee; }
