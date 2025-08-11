@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head><meta charset="UTF-8"><title>एडमिन पैनल</title><link rel="stylesheet" href="admin.css"></head>
+<body>
+    <div id="admin-login-view"><h2>एडमिन लॉगिन</h2><input type="email" id="admin-email" placeholder="एडमिन ईमेल"><input type="password" id="admin-password" placeholder="एडमिन पासवर्ड"><button id="admin-login-btn">लॉगिन करें</button></div>
+    <div id="dashboard-view" style="display: none;"><header><h1>एडमिन कमांड सेंटर</h1><button id="admin-logout-btn">लॉगआउट</button></header><section><h2>मासिक मीडिया और छुट्टी प्रबंधन</h2><label>महीना चुनें:</label><input type="month" id="month-selector"><hr><label>फोटो अपलोड करें:</label><input type="file" id="photo-uploader" accept="image/*"><br><label>ध्वनि अपलोड करें:</label><input type="file" id="sound-uploader" accept="audio/*"><hr><label>विशेष छुट्टी जोड़ें:</label><input type="date" id="holiday-date"><input type="text" id="holiday-reason" placeholder="छुट्टी का कारण (जैसे: दिवाली)"><button id="add-holiday-btn">छुट्टी जोड़ें</button><hr><button id="save-month-data-btn">इस महीने का डेटा सेव करें</button></section><section><h2>यूज़र मैनेजमेंट</h2><div id="user-list"></div></section></div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script><script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script><script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyA_C5-1k40B2an8h3nTFkRflO4d4ZS6JWQ",
+            authDomain: "mahadivya-panchang.firebaseapp.com",
+            projectId: "mahadivya-panchang",
+            storageBucket: "mahadivya-panchang.appspot.com",
+            messagingSenderId: "336726728626",
+            appId: "1:336726728626:web:9d165e3b429fe1b529ceab"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="admin.js"></script>
+</body>
+</html>
